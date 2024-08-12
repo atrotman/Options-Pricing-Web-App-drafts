@@ -150,7 +150,7 @@ const generateHeatmapData = (
   return { callData, putData };
 };
 
-// Function to generate viridis colors for Color Scale Bars
+// Function to generate viridis for Color Scale Bars
 const viridisColor = (value: number, min: number, max: number): string => {
   const scale = Math.max(0, Math.min(1, (value - min) / (max - min)));
   const viridisColors = [
@@ -400,7 +400,7 @@ export default function Home() {
       <div className="w-full lg:w-4/5 pl-0 lg:pl-8 flex flex-col">
         <h2 className="text-2xl font-bold mb-4">{model} Option Pricing Heatmaps</h2>
         
-        {/* New Message Box */}
+        {/* Welcome Message Box */}
         <div className="p-4 mb-4 rounded-lg" style={{ backgroundColor: '#e0f7fa', color: '#0077b6', fontWeight: 'bold', fontSize: '1.125rem' }}>
           Welcome! Explore how option prices move across different volatility levels and strike prices.
           Black-Scholes and Binomial Tree models are currently available with Finite Differences
@@ -445,7 +445,7 @@ export default function Home() {
                       }}
                       data={heatmapData.callData}
                       squares
-                      height={45} // This line can be omitted if you want height to be auto-adjusted
+                      height={45}
                       cellStyle={(
                         background: string, 
                         value: number, 
@@ -497,7 +497,7 @@ export default function Home() {
                       }}
                       data={heatmapData.putData}
                       squares
-                      height={45} // This line can be omitted if you want height to be auto-adjusted
+                      height={45}
                       cellStyle={(
                         background: string, 
                         value: number, 
@@ -558,10 +558,10 @@ export default function Home() {
             padding-left: 0;
           }
           .w-full, .w-4/5, .w-1/5 {
-            width: 100%; /* Ensure full width on small screens */
+            width: 100%;
           }
           .p-4, .mb-4 {
-            padding: 0.5rem; /* Less padding on small screens */
+            padding: 0.5rem;
             margin-bottom: 1rem;
           }
         }
